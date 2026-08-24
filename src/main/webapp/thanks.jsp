@@ -35,18 +35,18 @@
 
         <div class="survey-row">
             <span class="survey-label">Announcements preferences:</span>
-            <span>
+            <div>
                 <% if (request.getAttribute("likeAnnouncements") != null && !request.getAttribute("likeAnnouncements").toString().isEmpty()) { %>
-                    &#10003; YES, I'd like that.<br>
+                    <div>&#10003; YES, I'd like that.</div>
                 <% } %>
                 <% if (request.getAttribute("emailAnnouncements") != null && !request.getAttribute("emailAnnouncements").toString().isEmpty()) { %>
-                    &#10003; YES, please send me email announcements.<br>
+                    <div>&#10003; YES, please send me email announcements.</div>
                 <% } %>
                 <% if ((request.getAttribute("likeAnnouncements") == null || request.getAttribute("likeAnnouncements").toString().isEmpty())
                      && (request.getAttribute("emailAnnouncements") == null || request.getAttribute("emailAnnouncements").toString().isEmpty())) { %>
-                    (none selected)
+                    <div>(none selected)</div>
                 <% } %>
-            </span>
+            </div>
         </div>
 
         <div class="survey-row">
