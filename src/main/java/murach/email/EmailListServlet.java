@@ -15,33 +15,26 @@ public class EmailListServlet extends HttpServlet {
 
         String url = "/index.html";
 
-        // get current action
         String action = request.getParameter("action");
         if (action == null) {
-            action = "join";      // default action
+            action = "join";
         }
 
-        // perform action and set URL to appropriate page
         if (action.equals("join")) {
-            url = "/index.html";  // the "join" page
+            url = "/index.html";
         }
         else if (action.equals("add")) {
-
-            // get parameters from the request
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
             String dob = request.getParameter("dob");
 
-            // store data in User object and save User object in database
             User user = new User(firstName, lastName, email, dob);
 
-            // set User object in request object and set URL
             request.setAttribute("user", user);
-            url = "/thanks.jsp";  // the "thanks" page
+            url = "/thanks.jsp";
         }
 
-        // forward request and response objects to specified URL
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
