@@ -25,6 +25,27 @@
         <label>Date of Birth:</label>
         <span>${user.dob}</span><br>
 
+        <br>
+        <h2>Survey</h2>
+
+        <label>How did you hear about us:</label>
+        <span>${selections}</span><br>
+
+        <label>Announcements preferences:</label><br>
+        <% if (request.getAttribute("likeAnnouncements") != null && !request.getAttribute("likeAnnouncements").toString().isEmpty()) { %>
+            <span>&#10003; YES, I'd like that.</span><br>
+        <% } %>
+        <% if (request.getAttribute("emailAnnouncements") != null && !request.getAttribute("emailAnnouncements").toString().isEmpty()) { %>
+            <span>&#10003; YES, please send me email announcements.</span><br>
+        <% } %>
+        <% if ((request.getAttribute("likeAnnouncements") == null || request.getAttribute("likeAnnouncements").toString().isEmpty())
+             && (request.getAttribute("emailAnnouncements") == null || request.getAttribute("emailAnnouncements").toString().isEmpty())) { %>
+            <span>(none selected)</span><br>
+        <% } %>
+
+        <label>Contact method:</label>
+        <span>${contactMethod}</span><br>
+
         <p>To enter another email address, click on the Back
             button in your browser or the Return button shown
             below.</p>

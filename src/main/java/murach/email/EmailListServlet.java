@@ -30,8 +30,23 @@ public class EmailListServlet extends HttpServlet {
             String dob = request.getParameter("dob");
 
             User user = new User(firstName, lastName, email, dob);
-
             request.setAttribute("user", user);
+
+            // Survey fields
+            String selections = request.getParameter("selections");
+            if (selections == null) selections = "(not selected)";
+            request.setAttribute("selections", selections);
+
+            String likeAnnouncements = request.getParameter("likeAnnouncements");
+            request.setAttribute("likeAnnouncements", likeAnnouncements != null ? likeAnnouncements : "");
+
+            String emailAnnouncements = request.getParameter("emailAnnouncements");
+            request.setAttribute("emailAnnouncements", emailAnnouncements != null ? emailAnnouncements : "");
+
+            String contactMethod = request.getParameter("select_one_on_list");
+            if (contactMethod == null) contactMethod = "";
+            request.setAttribute("contactMethod", contactMethod);
+
             url = "/thanks.jsp";
         }
 

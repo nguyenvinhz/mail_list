@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="/styles/main.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
 </head>
+
 <body>
-<form method="post" action="emailList">
-    <img src="https://tse2.mm.bing.net/th/id/OIP.INH7N2X86TyoAGmnL4Ne-AHaJD?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ảnh logo HCMUTE" width="200">
-    <h1>Survey</h1>
-    <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+    <form method="post" action="emailList">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.INH7N2X86TyoAGmnL4Ne-AHaJD?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Ảnh logo HCMUTE" width="200">
+        <h1>Survey</h1>
+        <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
 
-    <h1>Join our email list</h1>
-    <p>To join our email list, enter your name and
-        email address below.</p>
-    <div action="emailList" method=post>
-        <input type="hidden" name="action" value="add">
+        <h1>Join our email list</h1>
+        <p>To join our email list, enter your name and
+            email address below.</p>
+        <div action="emailList" method=post>
+            <input type="hidden" name="action" value="add">
 
-        <label>First Name:</label>
-        <input type="text" name="firstName" required><br>
+            <label>First Name:</label>
+            <input type="text" name="firstName" required><br>
 
-        <label>Last Name:</label>
-        <input type="text" name="lastName" required><br>
+            <label>Last Name:</label>
+            <input type="text" name="lastName" required><br>
 
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br>
 
-        <label>Date of Birth:</label>
-        <input type="date" name = "dob" required><br>
-    </div>
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required><br>
+        </div>
 
-    <h1>How did you hear about us?</h1>
-    <div action="select_one">
-        <input type="radio" id = "search_engine" name = "seclections">
-        <lable for = "search_engine">Search Engine</lable>
+        <h1>How did you hear about us?</h1>
+        <div action="select_one">
+            <input type="radio" id="search_engine" name="selections" value="Search Engine">
+            <lable for="search_engine">Search Engine</lable>
 
-        <input type="radio" id = "word_of_mouth" name = "seclections">
-        <lable for = "word_of_mouth">Word of mouth</lable>
+            <input type="radio" id="word_of_mouth" name="selections" value="Word of mouth">
+            <lable for="word_of_mouth">Word of mouth</lable>
 
-        <input type="radio" id = "social_media" name = "seclections">
-        <lable for = "social_media">Social Media</lable>
+            <input type="radio" id="social_media" name="selections" value="Social Media">
+            <lable for="social_media">Social Media</lable>
 
-        <input type="radio" id = "other" name = "seclections">
-        <lable for = "other">Other</lable>
-    </div>
+            <input type="radio" id="other" name="selections" value="Other">
+            <lable for="other">Other</lable>
+        </div>
 
-    <h1>Would you like to receive announcements about new CDs and special offers?</h1>
-    <div action="select_one_or_more">
-        <input type="checkbox">
-        <lable>YES, I'd like that.</lable><br>
+        <h1>Would you like to receive announcements about new CDs and special offers?</h1>
+        <div action="select_one_or_more">
+            <input type="checkbox" name="likeAnnouncements" value="YES, I'd like that.">
+            <lable>YES, I'd like that.</lable><br>
 
-        <input type="checkbox">
-        <lable>YES, please send me email announcements.</lable><br>
+            <input type="checkbox" name="emailAnnouncements" value="YES, please send me email announcements.">
+            <lable>YES, please send me email announcements.</lable><br>
 
-        <lable for = "select_one_on_list">Please contact me by:</lable>
-        <select name="select_one_on_list" id="select_one_on_list">
-            <option value = "email_or_postal_mail"> Email or postal mail</option>
-        </select>
-    </div>
+            <lable for="select_one_on_list">Please contact me by:</lable>
+            <select name="select_one_on_list" id="select_one_on_list">
+                <option value="Email or postal mail"> Email or postal mail</option>
+            </select>
+        </div>
 
-    <input type="submit" id = "submit">
-</form>
+        <input type="submit" id="submit">
+    </form>
 </body>
+
 </html>
