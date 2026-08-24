@@ -26,25 +26,33 @@
         <span>${user.dob}</span><br>
 
         <br>
-        <h2>Survey</h2>
+        <h1>Survey</h1>
 
-        <label>How did you hear about us:</label>
-        <span>${selections}</span><br>
+        <div class="survey-row">
+            <span class="survey-label">How did you hear about us:</span>
+            <span>${selections}</span>
+        </div>
 
-        <label>Announcements preferences:</label><br>
-        <% if (request.getAttribute("likeAnnouncements") != null && !request.getAttribute("likeAnnouncements").toString().isEmpty()) { %>
-            <span>&#10003; YES, I'd like that.</span><br>
-        <% } %>
-        <% if (request.getAttribute("emailAnnouncements") != null && !request.getAttribute("emailAnnouncements").toString().isEmpty()) { %>
-            <span>&#10003; YES, please send me email announcements.</span><br>
-        <% } %>
-        <% if ((request.getAttribute("likeAnnouncements") == null || request.getAttribute("likeAnnouncements").toString().isEmpty())
-             && (request.getAttribute("emailAnnouncements") == null || request.getAttribute("emailAnnouncements").toString().isEmpty())) { %>
-            <span>(none selected)</span><br>
-        <% } %>
+        <div class="survey-row">
+            <span class="survey-label">Announcements preferences:</span>
+            <span>
+                <% if (request.getAttribute("likeAnnouncements") != null && !request.getAttribute("likeAnnouncements").toString().isEmpty()) { %>
+                    &#10003; YES, I'd like that.<br>
+                <% } %>
+                <% if (request.getAttribute("emailAnnouncements") != null && !request.getAttribute("emailAnnouncements").toString().isEmpty()) { %>
+                    &#10003; YES, please send me email announcements.<br>
+                <% } %>
+                <% if ((request.getAttribute("likeAnnouncements") == null || request.getAttribute("likeAnnouncements").toString().isEmpty())
+                     && (request.getAttribute("emailAnnouncements") == null || request.getAttribute("emailAnnouncements").toString().isEmpty())) { %>
+                    (none selected)
+                <% } %>
+            </span>
+        </div>
 
-        <label>Contact method:</label>
-        <span>${contactMethod}</span><br>
+        <div class="survey-row">
+            <span class="survey-label">Contact method:</span>
+            <span>${contactMethod}</span>
+        </div>
 
         <p>To enter another email address, click on the Back
             button in your browser or the Return button shown
